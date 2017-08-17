@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.auth.dao.RoleDao">
+
+    <resultMap id="roleResultMap" type="com.auth.entity.Role">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+    <insert id="addRole"  parameterType="Role" >
+        insert into role(id,name) VALUES (#{id},#{name})
+    </insert>
+
+    <update id="updateRole" >
+        update role set name=#{name} where id = #{id}
+    </update>
+
+    <delete id="deleteRole" parameterType="long">
+        delete from role where id = #{id}
+    </delete>
+
+    <select id="queryRoleById" parameterType="long" resultType="com.auth.entity.Role">
+        select * from role where id = #{id}
+    </select>
+
+    <select id="queryAllRoles" resultType="com.auth.entity.Role">
+        select * from role
+    </select>
+
+
+
+
+</mapper>
