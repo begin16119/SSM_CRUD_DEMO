@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>用户列表页</title>
-    <meta charset="utf-8"/>
+
     <%@include file="common/tag.jsp"%>
 </head>
 <body>
